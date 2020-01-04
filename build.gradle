@@ -1,0 +1,24 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.11.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'com.spectrum'
+version = '1.0.0-exec'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.bestvike.com/repository/maven-public/' }
+    maven { url 'https://maven.bestvike.com/repository/third-party/' }
+    flatDir {
+        dirs 'lib'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:2.1.1.RELEASE'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
